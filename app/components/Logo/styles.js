@@ -15,6 +15,6 @@ export default EStyleSheet.create({
         fontSize: 20,
         letterSpacing: -0.5,
         marginTop: 15,
-        color: 'white'
+        color: '$white'
     }
 });
