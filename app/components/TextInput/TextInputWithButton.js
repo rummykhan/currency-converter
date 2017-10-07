@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Text, TouchableHighlight, TextInput} from 'react-native';
-
+import {Text, TextInput, TouchableHighlight, View} from 'react-native';
+import color from 'color';
 import styles from './styles';
 
 const TextInputWithButton = (props) => {
@@ -13,9 +13,12 @@ const TextInputWithButton = (props) => {
         containerStyles.push(styles.containerDisabled);
     }
 
+    const underlayColor = color(styles.$buttonBackgroundColorBase)
+        .darken(styles.$buttonBackgroundColorModifier);
+
     return (
         <View style={containerStyles}>
-            <TouchableHighlight style={styles.buttonContainer} onPress={onPress}>
+            <TouchableHighlight underlayColor={underlayColor} style={styles.buttonContainer} onPress={onPress}>
                 <Text style={styles.buttonText}>{buttonText}</Text>
             </TouchableHighlight>
             <View style={styles.border}/>
